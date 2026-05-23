@@ -1,0 +1,220 @@
+<mxfile host="65bd71144e">
+    <diagram id="lHxuyXZ4L8VbStCFiVs1" name="Page-1">
+        <mxGraphModel dx="529" dy="385" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1200" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="title" value="Diagrama de Contexto – Sistema de Evaluaciones Post-Capacitación" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="30" width="1000" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="sistema_central_bg" value="SISTEMA DE GESTIÓN DE EVALUACIONES (Empresa Capacitadora)" style="swimlane;startSize=40;fillColor=#FFE6CC;strokeColor=#000000;strokeWidth=3;dashed=1;fontStyle=1;fontSize=14;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="200" width="1000" height="600" as="geometry"/>
+                </mxCell>
+                <mxCell id="notificaciones" value="Motor de&#xa;Notificaciones&#xa;(Email/SMS)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=12;" parent="sistema_central_bg" vertex="1">
+                    <mxGeometry x="80" y="120" width="180" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="validacion" value="Sistema de&#xa;Validación de&#xa;Evaluaciones" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=12;" parent="sistema_central_bg" vertex="1">
+                    <mxGeometry x="410" y="120" width="180" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="calificacion" value="Motor de&#xa;Calificación&#xa;Automática" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=12;" parent="sistema_central_bg" vertex="1">
+                    <mxGeometry x="740" y="120" width="180" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="plataforma" value="Plataforma de&#xa;Evaluación&#xa;(Forms/Quiz)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=12;" parent="sistema_central_bg" vertex="1">
+                    <mxGeometry x="80" y="320" width="180" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="bd_empleados" value="BD de Empleados&#xa;y Respuestas" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" parent="sistema_central_bg" vertex="1">
+                    <mxGeometry x="410" y="320" width="180" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="reportes" value="Generador de&#xa;Reportes Diarios" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;fontSize=12;" parent="sistema_central_bg" vertex="1">
+                    <mxGeometry x="740" y="325" width="180" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="temporizador" value="Evento&lt;br&gt;Temporizado&lt;br&gt;(Cada día)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1;fontSize=11;" parent="sistema_central_bg" vertex="1">
+                    <mxGeometry x="770" y="460" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="if1" value="Dispara invitaciones&#xa;y recordatorios" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;strokeColor=#6c8ebf;strokeWidth=2;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="sistema_central_bg" source="validacion" target="notificaciones" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="if2" value="Consulta/actualiza&#xa;lista y respuestas" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;strokeColor=#82b366;strokeWidth=2;" parent="sistema_central_bg" source="validacion" target="bd_empleados" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="500" y="220"/>
+                            <mxPoint x="500" y="220"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="if3" value="Genera enlaces únicos" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;strokeColor=#6c8ebf;strokeWidth=2;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" parent="sistema_central_bg" source="validacion" target="plataforma" edge="1">
+                    <mxGeometry x="-0.0633" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="455" y="250"/>
+                            <mxPoint x="170" y="250"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="if4" value="Envía respuestas" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;strokeColor=#6c8ebf;strokeWidth=2;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="sistema_central_bg" source="plataforma" target="calificacion" edge="1">
+                    <mxGeometry x="-0.2292" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="170" y="460"/>
+                            <mxPoint x="710" y="460"/>
+                            <mxPoint x="710" y="240"/>
+                            <mxPoint x="830" y="240"/>
+                        </Array>
+                        <mxPoint x="1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="if5" value="Actualiza estado" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;strokeColor=#6c8ebf;strokeWidth=2;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.855;entryY=0;entryDx=0;entryDy=4.35;entryPerimeter=0;" parent="sistema_central_bg" source="calificacion" target="bd_empleados" edge="1">
+                    <mxGeometry x="-0.194" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="660" y="165"/>
+                            <mxPoint x="660" y="250"/>
+                            <mxPoint x="564" y="250"/>
+                        </Array>
+                        <mxPoint x="690" y="140" as="sourcePoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="if6" value="Consulta estados" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;strokeColor=#b85450;strokeWidth=2;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" parent="sistema_central_bg" source="bd_empleados" target="reportes" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="740" y="370"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="if7" value="Dispara generación" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;strokeColor=#d79b00;strokeWidth=2;dashed=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="sistema_central_bg" source="temporizador" target="reportes" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="actor_coordinadora" value="Coordinadora&#xa;de&#xa;Capacitaciones" style="shape=mxgraph.flowchart.start_2;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=12;verticalLabelPosition=bottom;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="100" y="300" width="90" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="actor_asesora" value="Asesora&#xa;de&#xa;Seguimiento" style="shape=mxgraph.flowchart.start_2;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=12;verticalLabelPosition=bottom;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="100" y="550" width="90" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="actor_rrhh" value="Contacto&#xa;RRHH&#xa;Cliente" style="shape=mxgraph.flowchart.start_2;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;verticalLabelPosition=bottom;verticalAlign=top;rotation=0;" parent="1" vertex="1">
+                    <mxGeometry x="1550" y="350" width="90" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="actor_empleado" value="Empleado&#xa;(Participante)" style="shape=mxgraph.flowchart.start_2;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;verticalLabelPosition=bottom;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="1550" y="600" width="90" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="cliente_empresa" value="CLIENTE&#xa;(EMPRESA)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="810" y="110" width="180" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="ef1" value="Carga/actualiza lista&#xa;de empleados" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;strokeColor=#6c8ebf;strokeWidth=2.5;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" parent="1" source="actor_coordinadora" target="validacion" edge="1">
+                    <mxGeometry x="-0.4303" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="250" y="345"/>
+                            <mxPoint x="250" y="250"/>
+                            <mxPoint x="945" y="250"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="ef2" value="Invitación con enlace único" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;strokeColor=#6c8ebf;strokeWidth=2.5;entryX=0.855;entryY=0.145;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="notificaciones" target="actor_empleado" edge="1">
+                    <mxGeometry x="0.1075" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="570" y="300"/>
+                            <mxPoint x="320" y="300"/>
+                            <mxPoint x="320" y="860"/>
+                            <mxPoint x="1690" y="860"/>
+                            <mxPoint x="1690" y="613"/>
+                        </Array>
+                        <mxPoint x="1710" y="620" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="ef3" value="Responde evaluación" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;strokeColor=#82b366;strokeWidth=2.5;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="actor_empleado" target="plataforma" edge="1">
+                    <mxGeometry x="-0.0174" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1500" y="645"/>
+                            <mxPoint x="1500" y="820"/>
+                            <mxPoint x="370" y="820"/>
+                            <mxPoint x="370" y="565"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="ef4" value="Resultado inmediato&#xa;(100% / Reintentar)" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;strokeColor=#b85450;strokeWidth=2.5;dashed=1;" parent="1" source="calificacion" target="actor_empleado" edge="1">
+                    <mxGeometry x="-0.1962" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1470" y="365"/>
+                            <mxPoint x="1470" y="570"/>
+                            <mxPoint x="1595" y="570"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="ef5" value="Informe diario por empresa&#xa;(Aprobados/Reprobados/Pendientes)" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;strokeColor=#b85450;strokeWidth=2.5;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="reportes" target="actor_rrhh" edge="1">
+                    <mxGeometry x="-0.4888" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1230" y="490"/>
+                            <mxPoint x="1530" y="490"/>
+                            <mxPoint x="1530" y="395"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="ef6" value="Coordina acciones internas" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;strokeColor=#9673a6;strokeWidth=2.5;dashed=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="actor_rrhh" target="cliente_empresa" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1595" y="145"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="ef7" value="Solicita corrección de lista" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;strokeColor=#9673a6;strokeWidth=2.5;dashed=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="cliente_empresa" target="actor_coordinadora" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="145" y="145"/>
+                        </Array>
+                        <mxPoint x="760" y="120" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="ef8" value="Gestiona casos especiales" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;strokeColor=#6c8ebf;strokeWidth=2.5;dashed=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1" source="actor_asesora" target="validacion" edge="1">
+                    <mxGeometry x="0.6555" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="280" y="595"/>
+                            <mxPoint x="280" y="280"/>
+                            <mxPoint x="855" y="280"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="ef9" value="Recordatorios automáticos" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;strokeColor=#d79b00;strokeWidth=2.5;dashed=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="notificaciones" target="actor_empleado" edge="1">
+                    <mxGeometry x="0.0644" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="340" y="365"/>
+                            <mxPoint x="340" y="840"/>
+                            <mxPoint x="1670" y="840"/>
+                            <mxPoint x="1670" y="645"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="leyenda_bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="600" y="1050" width="600" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="leyenda_titulo" value="Leyenda" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontStyle=1;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="620" y="1060" width="100" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="leg1" value="     Actor empresa capacitadora" style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="620" y="1090" width="240" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="leg2" value="     Actor cliente (empresa)" style="text;html=1;strokeColor=#82b366;fillColor=#d5e8d4;align=left;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="620" y="1115" width="240" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="leg3" value="     Organización cliente" style="text;html=1;strokeColor=#9673a6;fillColor=#e1d5e7;align=left;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="620" y="1140" width="240" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="leg4" value="──── Flujo principal" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;fontColor=#6c8ebf;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="900" y="1090" width="240" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="leg5" value="- - - - Flujo secundario" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;fontColor=#d79b00;" parent="1" vertex="1">
+                    <mxGeometry x="900" y="1115" width="240" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="leg6" value="⏰  Evento temporizado" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;fontColor=#d79b00;" parent="1" vertex="1">
+                    <mxGeometry x="900" y="1140" width="240" height="25" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
