@@ -145,5 +145,3 @@ Workflow de prueba utilizado durante el desarrollo para validar la integración 
 El sistema se encuentra **en producción y completamente funcional**. Todos los workflows están activos. El envío de correos opera a través de Brevo con la IP de Railway autorizada.
 
 La demo está configurada con 30 empleados ficticios distribuidos en 6 empresas, lista para ser presentada sin necesidad de datos reales.
-
-> **Para producción real:** se reemplazarían los empleados ficticios por los reales de Suporta, las preguntas demo por las preguntas oficiales de cada capacitación, y se completarían los contactos de las empresas restantes.
