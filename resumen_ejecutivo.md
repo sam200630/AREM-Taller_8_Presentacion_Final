@@ -98,10 +98,10 @@ Se utiliza **Static Data de n8n** (memoria persistente del workflow) para manten
   - **Informe general**: todos los empleados de todas las empresas, agrupados por empresa.
   - **Informe de empresa**: únicamente los empleados de la empresa del respondiente.
 - Envía ambos correos vía **Brevo** (API transaccional):
-  - Informe general → `juangomeper@gmail.com` (administración Suporta)
+  - Informe general → Se resive al correo del administración Suporta.
   - Informe empresa → contacto registrado de la empresa correspondiente.
 
-### Workflow 3 — TEST Envío Email SMTP
+### Workflow 3 — Envío Email SMTP
 
 Workflow de prueba utilizado durante el desarrollo para validar la integración con Brevo. Se conserva como referencia técnica. **No está activo en producción.**
 
@@ -119,38 +119,7 @@ Workflow de prueba utilizado durante el desarrollo para validar la integración 
 
 ---
 
-## 7. Empresas configuradas (demo)
-
-| Empresa | Contacto email |
-|---|---|
-| TechCorp S.A.S | andrejulieth22@gmail.com |
-| Constructora Nueva Era | rodriguez.samuel2006@gmail.com |
-| Distribuidora del Norte | *(sin contacto — solo informe general)* |
-| Inversiones Pacífico | *(sin contacto — solo informe general)* |
-| Grupo Andino | *(sin contacto — solo informe general)* |
-| Servicios Integrados S.A. | *(sin contacto — solo informe general)* |
-
----
-
-## 8. Clave de respuestas correctas (demo)
-
-| P1 | P2 | P3 | P4 | P5 | P6 | P7 | P8 | P9 | P10 |
-|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:---:|
-| A  | C  | B  | A  | D  | B  | C  | A  | B  | D   |
-
----
-
-## 9. URLs del sistema
-
-| Acción | URL |
-|---|---|
-| Resetear demo | `https://n8n-production-1e4d.up.railway.app/webhook/cargar-demo` |
-| Formulario de evaluación | `https://n8n-production-1e4d.up.railway.app/form/encuesta-suporta` |
-| Panel de administración n8n | `https://n8n-production-1e4d.up.railway.app/home/workflows` |
-
----
-
-## 10. Flujo de demostración
+## 7. Flujo de demostración
 
 ```
 1. GET /webhook/cargar-demo
@@ -165,20 +134,16 @@ Workflow de prueba utilizado durante el desarrollo para validar la integración 
    → Genera informe general + informe de empresa
    → Envía ambos correos vía Brevo en tiempo real
 
-4. juangomeper@gmail.com recibe el informe general (todas las empresas)
+4. El administrador recibe el informe general.
 5. Contacto de empresa recibe el informe solo con sus empleados
 ```
 
 ---
 
-## 11. Estado actual
+## 8. Estado actual
 
 El sistema se encuentra **en producción y completamente funcional**. Todos los workflows están activos. El envío de correos opera a través de Brevo con la IP de Railway autorizada.
 
 La demo está configurada con 30 empleados ficticios distribuidos en 6 empresas, lista para ser presentada sin necesidad de datos reales.
 
 > **Para producción real:** se reemplazarían los empleados ficticios por los reales de Suporta, las preguntas demo por las preguntas oficiales de cada capacitación, y se completarían los contactos de las empresas restantes.
-
----
-
-*Documento generado para la presentación final del Taller 8 — Ingeniería de Sistemas*
