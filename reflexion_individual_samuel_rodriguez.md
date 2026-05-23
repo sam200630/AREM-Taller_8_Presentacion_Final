@@ -38,7 +38,7 @@ Responsable del diseño e implementación del sistema de automatización en n8n,
 
 ## Contribución Personal
 
-Mi mayor aporte al equipo fue dar otra perspectiva y contribuir con soluciones y diferentes puntos de vista.
+Mi mayor aporte al equipo fue dar otra perspectiva y contribuir con soluciones y diferentes puntos de vista. Estuve pendiente de los riesgos que podía enfrentar el cliente y de sus necesidades reales, lo que ayudó a orientar las discusiones del equipo hacia lo que realmente importaba resolver. También participé activamente en la planeación de los diferentes módulos necesarios para la automatización, contribuyendo a definir qué debía hacer cada parte del sistema antes de que se implementara.
 
 ---
 
